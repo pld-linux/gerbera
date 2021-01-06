@@ -12,6 +12,7 @@ BuildRequires:	curl-devel
 BuildRequires:	exiv2-devel
 BuildRequires:	ffmpeg-devel
 BuildRequires:	ffmpegthumbnailer-devel
+BuildRequires:	libexif-devel
 BuildRequires:	libfmt-devel
 BuildRequires:	libmagic-devel
 BuildRequires:	libmatroska-devel
