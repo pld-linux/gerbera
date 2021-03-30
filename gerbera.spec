@@ -20,6 +20,7 @@ BuildRequires:	libstdc++-devel >= 6:7.1
 BuildRequires:	libupnp-devel >= 1.12.1
 BuildRequires:	libuuid-devel
 BuildRequires:	pugixml-devel
+BuildRequires:	rpmbuild(macros) >= 1.644
 BuildRequires:	spdlog-devel
 BuildRequires:	sqlite3-devel
 BuildRequires:	systemd-devel
