@@ -1,11 +1,11 @@
 Summary:	UPnP Media Server
 Name:		gerbera
-Version:	1.7.0
+Version:	1.8.0
 Release:	1
 License:	GPL v2
 Group:		Applications
 Source0:	https://github.com/gerbera/gerbera/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	254f734208a112bc46a7263406488e95
+# Source0-md5:	e6eb95db8e3f6da9c473ce2a657c4957
 URL:		https://gerbera.io
 BuildRequires:	cmake >= 3.13
 BuildRequires:	curl-devel
@@ -17,17 +17,18 @@ BuildRequires:	libfmt-devel >= 5.3
 BuildRequires:	libmagic-devel
 BuildRequires:	libmatroska-devel
 BuildRequires:	libstdc++-devel >= 6:7.1
-BuildRequires:	libupnp-devel >= 1.12.1
+BuildRequires:	libupnp-devel >= 1.14.0
 BuildRequires:	libuuid-devel
 BuildRequires:	pugixml-devel
 BuildRequires:	rpmbuild(macros) >= 1.644
 BuildRequires:	spdlog-devel
-BuildRequires:	sqlite3-devel
+BuildRequires:	sqlite3-devel >= 3.7.0
 BuildRequires:	systemd-devel
 BuildRequires:	taglib-devel
 BuildRequires:	zlib-devel
 Requires:	libfmt >= 5.3
-Requires:	libupnp >= 1.12.1
+Requires:	libupnp >= 1.14.0
+Requires:	sqlite3-libs >= 3.7.0
 Requires:	systemd-units >= 38
 Provides:	group(gerbera)
 Provides:	user(gerbera)
