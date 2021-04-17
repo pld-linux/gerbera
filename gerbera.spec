@@ -5,7 +5,7 @@
 Summary:	UPnP Media Server
 Name:		gerbera
 Version:	1.8.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications
 Source0:	https://github.com/gerbera/gerbera/archive/v%{version}/%{name}-%{version}.tar.gz
