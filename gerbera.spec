@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	js		# JavaScript scripting support
+
 Summary:	UPnP Media Server
 Name:		gerbera
 Version:	1.8.0
@@ -9,6 +13,7 @@ Source0:	https://github.com/gerbera/gerbera/archive/v%{version}/%{name}-%{versio
 URL:		https://gerbera.io
 BuildRequires:	cmake >= 3.13
 BuildRequires:	curl-devel
+%{?with_js:BuildRequires:	duktape-devel}
 BuildRequires:	exiv2-devel
 BuildRequires:	ffmpeg-devel
 BuildRequires:	ffmpegthumbnailer-devel
@@ -20,7 +25,7 @@ BuildRequires:	libstdc++-devel >= 6:7.1
 BuildRequires:	libupnp-devel >= 1.14.0
 BuildRequires:	libuuid-devel
 BuildRequires:	pugixml-devel
-BuildRequires:	rpmbuild(macros) >= 1.644
+BuildRequires:	rpmbuild(macros) >= 1.742
 BuildRequires:	spdlog-devel
 BuildRequires:	sqlite3-devel >= 3.7.0
 BuildRequires:	systemd-devel
@@ -46,11 +51,11 @@ compatible devices.
 install -d build
 cd build
 %cmake .. \
-	-DWITH_AVCODEC=1 \
-	-DWITH_DEBUG=0 \
-	-DWITH_EXIV2=1 \
-	-DWITH_FFMPEGTHUMBNAILER=1 \
-	-DWITH_JS=0
+	-DWITH_AVCODEC:BOOL=OFF \
+	-DWITH_DEBUG:BOOL=OFF \
+	-DWITH_EXIV2:BOOL=OFF \
+	-DWITH_FFMPEGTHUMBNAILER:BOOL=ON \
+	%{cmake_on_off js WITH_JS}
 
 %{__make}
 
