@@ -4,12 +4,12 @@
 
 Summary:	UPnP Media Server
 Name:		gerbera
-Version:	1.9.0
-Release:	2
+Version:	1.9.1
+Release:	1
 License:	GPL v2
 Group:		Applications
 Source0:	https://github.com/gerbera/gerbera/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	46aa7fdf15c68aa099cbe0d9f8c3dfb8
+# Source0-md5:	acd67ee62250de56e7f98f5a112af6e8
 URL:		https://gerbera.io
 BuildRequires:	cmake >= 3.13
 BuildRequires:	curl-devel
@@ -18,7 +18,7 @@ BuildRequires:	exiv2-devel
 BuildRequires:	ffmpeg-devel
 BuildRequires:	ffmpegthumbnailer-devel
 BuildRequires:	libexif-devel
-BuildRequires:	libfmt-devel >= 5.3
+BuildRequires:	libfmt-devel >= 7.1.3
 BuildRequires:	libmagic-devel
 BuildRequires:	libmatroska-devel
 BuildRequires:	libstdc++-devel >= 6:7.1
@@ -26,13 +26,14 @@ BuildRequires:	libupnp-devel >= 1.14.0
 BuildRequires:	libuuid-devel
 BuildRequires:	pugixml-devel
 BuildRequires:	rpmbuild(macros) >= 1.742
-BuildRequires:	spdlog-devel
+BuildRequires:	spdlog-devel >= 1:1.8.2
 BuildRequires:	sqlite3-devel >= 3.7.0
 BuildRequires:	systemd-devel
 BuildRequires:	taglib-devel
 BuildRequires:	zlib-devel
-Requires:	libfmt >= 5.3
+Requires:	libfmt >= 7.1.3
 Requires:	libupnp >= 1.14.0
+Requires:	spdlog >= 1:1.8.2
 Requires:	sqlite3-libs >= 3.7.0
 Requires:	systemd-units >= 38
 Provides:	group(gerbera)
