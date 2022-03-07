@@ -4,14 +4,14 @@
 
 Summary:	UPnP Media Server
 Name:		gerbera
-Version:	1.9.2
+Version:	1.10.0
 Release:	1
 License:	GPL v2
 Group:		Applications
 Source0:	https://github.com/gerbera/gerbera/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	27d1224eea8f64a5a7f005640de6f83a
+# Source0-md5:	e1805212ae071024b3eb529490a2567e
 URL:		https://gerbera.io
-BuildRequires:	cmake >= 3.13
+BuildRequires:	cmake >= 3.18
 BuildRequires:	curl-devel
 %{?with_js:BuildRequires:	duktape-devel}
 BuildRequires:	exiv2-devel
@@ -22,20 +22,21 @@ BuildRequires:	libfmt-devel >= 7.1.3
 BuildRequires:	libmagic-devel
 BuildRequires:	libmatroska-devel
 BuildRequires:	libstdc++-devel >= 6:7.1
-BuildRequires:	libupnp-devel >= 1.14.0
+BuildRequires:	libupnp-devel >= 1.14.6
 BuildRequires:	libuuid-devel
 BuildRequires:	pugixml-devel
 BuildRequires:	rpmbuild(macros) >= 1.742
 BuildRequires:	spdlog-devel >= 1:1.8.1
 BuildRequires:	sqlite3-devel >= 3.7.11
 BuildRequires:	systemd-devel
-BuildRequires:	taglib-devel
+BuildRequires:	taglib-devel >= 1.12
 BuildRequires:	zlib-devel
 Requires:	libfmt >= 7.1.3
-Requires:	libupnp >= 1.14.0
+Requires:	libupnp >= 1.14.6
 Requires:	spdlog >= 1:1.8.1
 Requires:	sqlite3-libs >= 3.7.11
 Requires:	systemd-units >= 38
+Requires:	taglib >= 1.12
 Provides:	group(gerbera)
 Provides:	user(gerbera)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
