@@ -4,12 +4,12 @@
 
 Summary:	UPnP Media Server
 Name:		gerbera
-Version:	1.10.0
+Version:	1.11.0
 Release:	1
 License:	GPL v2
 Group:		Applications
 Source0:	https://github.com/gerbera/gerbera/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	e1805212ae071024b3eb529490a2567e
+# Source0-md5:	dcf3ae7bc506920e95d88f31129238ee
 URL:		https://gerbera.io
 BuildRequires:	cmake >= 3.18
 BuildRequires:	curl-devel
@@ -30,6 +30,7 @@ BuildRequires:	spdlog-devel >= 1:1.8.1
 BuildRequires:	sqlite3-devel >= 3.7.11
 BuildRequires:	systemd-devel
 BuildRequires:	taglib-devel >= 1.12
+BuildRequires:	wavpack-devel >= 5.1.0
 BuildRequires:	zlib-devel
 Requires:	libfmt >= 7.1.3
 Requires:	libupnp >= 1.14.6
@@ -37,6 +38,7 @@ Requires:	spdlog >= 1:1.8.1
 Requires:	sqlite3-libs >= 3.7.11
 Requires:	systemd-units >= 38
 Requires:	taglib >= 1.12
+Requires:	wavpack-libs >= 5.1.0
 Provides:	group(gerbera)
 Provides:	user(gerbera)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -57,6 +59,7 @@ cd build
 	-DWITH_DEBUG:BOOL=OFF \
 	-DWITH_EXIV2:BOOL=OFF \
 	-DWITH_FFMPEGTHUMBNAILER:BOOL=ON \
+	-DWITH_WAVPACK:BOOL=ON \
 	%{cmake_on_off js WITH_JS}
 
 %{__make}
