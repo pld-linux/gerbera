@@ -10,6 +10,7 @@ License:	GPL v2
 Group:		Applications
 Source0:	https://github.com/gerbera/gerbera/archive/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	dcf3ae7bc506920e95d88f31129238ee
+Patch0:		libfmt9.patch
 URL:		https://gerbera.io
 BuildRequires:	cmake >= 3.18
 BuildRequires:	curl-devel
@@ -50,6 +51,7 @@ compatible devices.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 install -d build
