@@ -1,16 +1,18 @@
 #
 # Conditional build:
-%bcond_without	js		# JavaScript scripting support
+%bcond_without	js	# JavaScript scripting support
 
 Summary:	UPnP Media Server
+Summary(pl.UTF-8):	Serwer mediów UPnP
 Name:		gerbera
 Version:	1.12.1
 Release:	2
 License:	GPL v2
-Group:		Applications
+Group:		Applications/Multimedia
+#Source0Download: https://github.com/gerbera/gerbera/releases
 Source0:	https://github.com/gerbera/gerbera/archive/v%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	bd826f6060955a9b38c9faffdf4da951
-URL:		https://gerbera.io
+URL:		https://gerbera.io/
 BuildRequires:	cmake >= 3.18
 BuildRequires:	curl-devel
 %{?with_js:BuildRequires:	duktape-devel}
@@ -47,6 +49,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Gerbera is a UPnP media server which allows you to stream your digital
 media through your home network and consume it on a variety of UPnP
 compatible devices.
+
+%description -l pl.UTF-8
+Gerbera to serwer mediów UPnP, pozwalający na wysyłanie strumieni
+mediów cyfrowych poprzez domową sieć i odbieranie ich na różnych
+urządzeniach zgodnych z UPnP.
 
 %prep
 %setup -q
