@@ -59,9 +59,7 @@ urządzeniach zgodnych z UPnP.
 %setup -q
 
 %build
-install -d build
-cd build
-%cmake .. \
+%cmake -B build \
 	-DWITH_AVCODEC:BOOL=OFF \
 	-DWITH_DEBUG:BOOL=OFF \
 	-DWITH_EXIV2:BOOL=OFF \
@@ -69,7 +67,7 @@ cd build
 	-DWITH_WAVPACK:BOOL=ON \
 	%{cmake_on_off js WITH_JS}
 
-%{__make}
+%{__make} -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
