@@ -60,9 +60,9 @@ urządzeniach zgodnych z UPnP.
 
 %build
 %cmake -B build \
-	-DWITH_AVCODEC:BOOL=OFF \
+	-DWITH_AVCODEC:BOOL=ON \
 	-DWITH_DEBUG:BOOL=OFF \
-	-DWITH_EXIV2:BOOL=OFF \
+	-DWITH_EXIV2:BOOL=ON \
 	-DWITH_FFMPEGTHUMBNAILER:BOOL=ON \
 	-DWITH_WAVPACK:BOOL=ON \
 	%{cmake_on_off js WITH_JS}
