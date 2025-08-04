@@ -5,13 +5,13 @@
 Summary:	UPnP Media Server
 Summary(pl.UTF-8):	Serwer mediów UPnP
 Name:		gerbera
-Version:	2.5.0
+Version:	2.6.0
 Release:	1
 License:	GPL v2
 Group:		Applications/Multimedia
 #Source0Download: https://github.com/gerbera/gerbera/releases
 Source0:	https://github.com/gerbera/gerbera/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	78a437bddefe9c8ee93360f2ff0fe81b
+# Source0-md5:	86ef3346e23d1643bf4c3effa14225f9
 URL:		https://gerbera.io/
 BuildRequires:	cmake >= 3.19
 BuildRequires:	curl-devel
@@ -19,8 +19,10 @@ BuildRequires:	curl-devel
 BuildRequires:	exiv2-devel
 BuildRequires:	ffmpeg-devel
 BuildRequires:	ffmpegthumbnailer-devel
+BuildRequires:	jsoncpp-devel
 BuildRequires:	libexif-devel
 BuildRequires:	libfmt-devel >= 7.1.3
+BuildRequires:	libicu-devel
 BuildRequires:	libmagic-devel
 BuildRequires:	libmatroska-devel
 BuildRequires:	libstdc++-devel >= 6:7.1
@@ -109,3 +111,4 @@ fi
 %{_mandir}/man1/gerbera.1*
 %{systemdunitdir}/gerbera.service
 %dir %attr(770,gerbera,gerbera) /var/lib/gerbera
+%{bash_compdir}/gerbera
