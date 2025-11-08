@@ -1,6 +1,8 @@
 #
 # Conditional build:
 %bcond_without	js	# JavaScript scripting support
+%bcond_without	mysql	# MySQL database support
+%bcond_with	pgsql	# PostgreSQL database support (requires libpqxx cmake config)
 
 Summary:	UPnP Media Server
 Summary(pl.UTF-8):	Serwer mediów UPnP
@@ -25,9 +27,11 @@ BuildRequires:	libfmt-devel >= 7.1.3
 BuildRequires:	libicu-devel
 BuildRequires:	libmagic-devel
 BuildRequires:	libmatroska-devel
+%{?with_pgsql:BuildRequires:	libpqxx-devel}
 BuildRequires:	libstdc++-devel >= 6:7.1
 BuildRequires:	libupnp-devel >= 1.14.6
 BuildRequires:	libuuid-devel
+%{?with_mysql:BuildRequires:	mysql-devel}
 BuildRequires:	pugixml-devel
 BuildRequires:	rpmbuild(macros) >= 1.742
 BuildRequires:	spdlog-devel >= 1:1.8.1
@@ -67,7 +71,9 @@ urządzeniach zgodnych z UPnP.
 	-DWITH_EXIV2:BOOL=ON \
 	-DWITH_FFMPEGTHUMBNAILER:BOOL=ON \
 	-DWITH_WAVPACK:BOOL=ON \
-	%{cmake_on_off js WITH_JS}
+	%{cmake_on_off js WITH_JS} \
+	%{cmake_on_off mysql WITH_MYSQL} \
+	%{cmake_on_off pgsql WITH_PGSQL}
 
 %{__make} -C build
 
