@@ -32,6 +32,7 @@ BuildRequires:	libmatroska-devel
 BuildRequires:	libstdc++-devel >= 6:7.1
 BuildRequires:	libupnp-devel >= 1.14.6
 BuildRequires:	libuuid-devel
+BuildRequires:	libzip-devel
 BuildRequires:	libzippp-devel
 %{?with_mysql:BuildRequires:	mysql-devel}
 BuildRequires:	pugixml-devel
