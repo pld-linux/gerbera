@@ -8,7 +8,7 @@ Summary:	UPnP Media Server
 Summary(pl.UTF-8):	Serwer mediów UPnP
 Name:		gerbera
 Version:	3.3.0
-Release:	4
+Release:	5
 License:	GPL v2
 Group:		Applications/Multimedia
 #Source0Download: https://github.com/gerbera/gerbera/releases
