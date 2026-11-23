@@ -8,7 +8,7 @@ Summary:	UPnP Media Server
 Summary(pl.UTF-8):	Serwer mediów UPnP
 Name:		gerbera
 Version:	3.3.0
-Release:	5
+Release:	6
 License:	GPL v2
 Group:		Applications/Multimedia
 #Source0Download: https://github.com/gerbera/gerbera/releases
@@ -36,20 +36,20 @@ BuildRequires:	libzip-devel
 BuildRequires:	libzippp-devel
 %{?with_mysql:BuildRequires:	mysql-devel}
 BuildRequires:	pugixml-devel
-BuildRequires:	rpmbuild(macros) >= 1.742
+BuildRequires:	rpmbuild(macros) >= 2.047
 BuildRequires:	spdlog-devel >= 1:1.8.1
 BuildRequires:	sqlite3-devel >= 3.7.11
 BuildRequires:	systemd-devel
 BuildRequires:	taglib-devel >= 1.12
 BuildRequires:	wavpack-devel >= 5.1.0
 BuildRequires:	zlib-devel
-Requires:	libfmt >= 7.1.3
-Requires:	libupnp >= 1.14.6
-Requires:	spdlog >= 1:1.8.1
-Requires:	sqlite3-libs >= 3.7.11
+Requires:	libfmt%{?_isa} >= 7.1.3
+Requires:	libupnp%{?_isa} >= 1.14.6
+Requires:	spdlog%{?_isa} >= 1:1.8.1
+Requires:	sqlite3-libs%{?_isa} >= 3.7.11
 Requires:	systemd-units >= 38
-Requires:	taglib >= 1.12
-Requires:	wavpack-libs >= 5.1.0
+Requires:	taglib%{?_isa} >= 1.12
+Requires:	wavpack-libs%{?_isa} >= 5.1.0
 Provides:	group(gerbera)
 Provides:	user(gerbera)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -73,10 +73,10 @@ urządzeniach zgodnych z UPnP.
 	-DWITH_DEBUG:BOOL=OFF \
 	-DWITH_EXIV2:BOOL=ON \
 	-DWITH_FFMPEGTHUMBNAILER:BOOL=ON \
-	-DWITH_WAVPACK:BOOL=ON \
-	%{cmake_on_off js WITH_JS} \
-	%{cmake_on_off mysql WITH_MYSQL} \
-	%{cmake_on_off pgsql WITH_PGSQL}
+	-DWITH_JS:BOOL=%{__ON_OFF js} \
+	-DWITH_MYSQL:BOOL=%{__ON_OFF mysql} \
+	-DWITH_PGSQL=%{__ON_OFF pgsql} \
+	-DWITH_WAVPACK:BOOL=ON
 
 %{__make} -C build
 
